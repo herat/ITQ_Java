@@ -9,16 +9,7 @@ package Tree;
 public class Postorder {
 
 	public Postorder() {
-		// create root node
-		TreeNode first = new TreeNode(40);
-		// insert children
-		first.insert(30);
-		first.insert(50);
-		first.insert(20);
-		first.insert(10);
-		first.insert(60);
-		// print postorder
-		printPostorder(first);
+
 	}
 
 	/**
@@ -30,17 +21,28 @@ public class Postorder {
 		if (first == null) {
 			return;
 		}
-		//print left subtree
+		// print left subtree
 		printPostorder(first.getLeft());
-		//print right subtree
+		// print right subtree
 		printPostorder(first.getRight());
-		//print root
+		// print root
 		System.out.println(first.getData());
 	}
 
 	public static void main(String[] args) {
-		//create object of postorder
+		// create root node
+		TreeNode first = new TreeNode(40);
+		// insert children
+		first.insert(30);
+		first.insert(50);
+		first.insert(20);
+		first.insert(10);
+		first.insert(60);
+
+		// create object of postorder
 		Postorder postorder = new Postorder();
+		// print postorder
+		postorder.printPostorder(first);
 	}
 
 }
