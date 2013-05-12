@@ -1,4 +1,5 @@
 package Tree;
+
 /**
  * @File : Levelorder.java
  * @Description : Class for traversing tree in levelorder
@@ -21,7 +22,7 @@ public class Levelorder {
 		BinaryTreeHeight binaryTreeHeight = new BinaryTreeHeight();
 		// get height of root
 		int height = binaryTreeHeight.getHeight(first);
-		//print nodes recursively at every level
+		// print nodes recursively at every level
 		for (int i = 1; i <= height; i++) {
 			printNodesatEveryLevel(i, first);
 		}
@@ -51,13 +52,17 @@ public class Levelorder {
 
 	public static void main(String[] args) {
 
-		Levelorder levelorder = new Levelorder();
+		// create root node
 		TreeNode first = new TreeNode(40);
+		// insert children
 		first.insert(30);
 		first.insert(50);
 		first.insert(20);
 		first.insert(10);
 		first.insert(60);
+		// create object of levelorder
+		Levelorder levelorder = new Levelorder();
+		//print tree in levelorder
 		levelorder.printLevelorder(first);
 	}
 
