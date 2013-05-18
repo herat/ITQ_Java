@@ -22,12 +22,12 @@ public class LevelOrderSpiral {
 		BinaryTreeHeight binaryTreeHeight = new BinaryTreeHeight();
 		// get height of root
 		int height = binaryTreeHeight.getHeight(first);
-		
-		int flag=1;
+
+		int flag = 1;
 		// print nodes recursively at every level
 		for (int i = 1; i <= height; i++) {
-			printNodesatEveryLevel(i, first,flag);
-			flag=~flag;
+			printNodesatEveryLevel(i, first, flag);
+			flag = ~flag;
 		}
 	}
 
@@ -38,7 +38,7 @@ public class LevelOrderSpiral {
 	 * @param first
 	 * @param flag
 	 */
-	public void printNodesatEveryLevel(int level, TreeNode first,int flag) {
+	public void printNodesatEveryLevel(int level, TreeNode first, int flag) {
 		if (first == null) {
 			return;
 		}
@@ -47,17 +47,16 @@ public class LevelOrderSpiral {
 			System.out.println(first.getData());
 			// if level>1, print nodes recursively at every level
 		} else if (level > 1) {
-			if(flag==1){
-			// print nodes of left child
-			printNodesatEveryLevel(level - 1, first.getLeft(),flag);
-			// print nodes of right child
-			printNodesatEveryLevel(level - 1, first.getRight(),flag);
-			}
-			else{
-				// print nodes of right child
-				printNodesatEveryLevel(level - 1, first.getRight(),flag);
+			if (flag == 1) {
 				// print nodes of left child
-				printNodesatEveryLevel(level - 1, first.getLeft(),flag);
+				printNodesatEveryLevel(level - 1, first.getLeft(), flag);
+				// print nodes of right child
+				printNodesatEveryLevel(level - 1, first.getRight(), flag);
+			} else {
+				// print nodes of right child
+				printNodesatEveryLevel(level - 1, first.getRight(), flag);
+				// print nodes of left child
+				printNodesatEveryLevel(level - 1, first.getLeft(), flag);
 			}
 		}
 	}
@@ -74,7 +73,7 @@ public class LevelOrderSpiral {
 		first.insert(60);
 		// create object of levelorder
 		LevelOrderSpiral levelOrderSpiral = new LevelOrderSpiral();
-		//print tree in levelorder
+		// print tree in levelorder
 		levelOrderSpiral.printLevelorder(first);
 	}
 
