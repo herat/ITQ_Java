@@ -45,7 +45,7 @@ public class Levelorder {
 		} else if (level > 1) {
 			// print nodes of left child
 			printNodesatEveryLevel(level - 1, first.getLeft());
-			// print nodes of irght child
+			// print nodes of right child
 			printNodesatEveryLevel(level - 1, first.getRight());
 		}
 	}
