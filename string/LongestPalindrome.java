@@ -51,10 +51,10 @@ public class LongestPalindrome {
 				if (table[j + 1][k - 1] && str.charAt(j) == str.charAt(k)) {
 					table[j][k] = true;
 					/*
-					 * if k is greater than maxlength, change start index and
+					 * if i is greater than maxlength, change start index and
 					 * maxlength
 					 */
-					if (k > maxLength) {
+					if (i > maxLength) {
 						startIndex = j;
 						maxLength = i;
 					}
