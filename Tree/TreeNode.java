@@ -13,6 +13,8 @@ public class TreeNode {
 	private TreeNode left;
 	// variable for right child
 	private TreeNode right;
+	// variable for next node at same level
+	private TreeNode nextRight;
 
 	/**
 	 * Parameterized constructor
@@ -23,6 +25,7 @@ public class TreeNode {
 		this.data = data;
 		this.left = null;
 		this.right = null;
+		this.nextRight = null;
 	}
 
 	public int getData() {
@@ -47,6 +50,14 @@ public class TreeNode {
 
 	public void setRight(TreeNode right) {
 		this.right = right;
+	}
+
+	public TreeNode getNextRight() {
+		return nextRight;
+	}
+
+	public void setNextRight(TreeNode nextRight) {
+		this.nextRight = nextRight;
 	}
 
 	/**
