@@ -14,7 +14,7 @@ public class DetectLoop {
         fast = slow;
         if(slow == null || fast == null)
             System.out.println("No cycle exists.");
-        while(slow != null && fast != null) {
+        while(slow != null && fast != null && fast.next != null) {
             if(slow.equals(fast)) {
                 System.out.println("Loop exists.");
                 return;
