@@ -15,12 +15,13 @@ public class DetectLoop {
         if(slow == null || fast == null)
             System.out.println("No cycle exists.");
         while(slow != null && fast != null && fast.next != null) {
-            if(slow.equals(fast)) {
+           
+            slow = slow.next;
+            fast = fast.next.next;
+             if(slow.equals(fast)) {
                 System.out.println("Loop exists.");
                 return;
             }
-            slow = slow.next;
-            fast = fast.next.next;
         }
         System.out.println("No cycle exists");
     }
